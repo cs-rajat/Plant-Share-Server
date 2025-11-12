@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const serviceAccountPath = process.env.SERVICE_ACCOUNT_PATH || "./serviceAccountKey.json";
-
 if (!admin.apps.length) {
   const key = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
   admin.initializeApp({
@@ -27,5 +26,4 @@ const verifyFirebaseToken = async (req, res, next) => {
     res.status(401).json({ message: "Unauthorized" });
   }
 };
-
 export default verifyFirebaseToken;
