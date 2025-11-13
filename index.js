@@ -5,8 +5,6 @@ import connectDB from "./src/config/db.js";
 import foodRoutes from "./src/routes/food.routes.js";
 import requestRoutes from "./src/routes/request.routes.js";
 
-
-
 dotenv.config();
 const app = express();
 app.use(cors());
